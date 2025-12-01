@@ -175,6 +175,12 @@ type ReadParams struct {
 
 	// PageSize specifies the # of records to request when making a read request.
 	PageSize int // optional
+
+	// Source contains provider-specific configuration for this object.
+	// It is optional and used by connectors that need additional context for reading.
+	//	* Snowflake: Contains streamName, dynamicTableName, query, dynamicTableTimestampColumn,
+	//		and streamOffsetTable for reading from Dynamic Tables and Streams.
+	Source map[string]any // optional
 }
 
 // WriteParams defines how we are writing data to a SaaS API.
