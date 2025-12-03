@@ -28,7 +28,7 @@ jobs:
           git clone --branch v1.64.3 --single-branch --depth 1 -c advice.detachedHead=false -q https://github.com/golangci/golangci-lint.git
 
       - name: Build custom golangci-lint with custom linters
-        run: golangci-lint custom
+        run: golangci-lint custom --verbose
 
       - name: Lint Go code
         run: make lint
